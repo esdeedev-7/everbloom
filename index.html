@@ -94,11 +94,11 @@ footer.siteFooter{ text-align:center; padding:30px 20px 50px; color:var(--ink-so
 .themeCard.sel .check{ display:flex; }
 
 /* bouquet tab (composer) */
-#bouquetCanvas{ position:relative; width:100%; aspect-ratio:4/5; max-height:480px; background:radial-gradient(ellipse at 50% 105%, rgba(140,90,107,0.14), transparent 60%), var(--panel); border:1px solid var(--line); border-radius:26px; overflow:hidden; box-shadow:var(--shadow); touch-action:none; margin-bottom:12px; }
+#bouquetCanvas{ position:relative; width:100%; aspect-ratio:4/5; max-height:480px; background:radial-gradient(ellipse at 50% 105%, rgba(140,90,107,0.14), transparent 60%), var(--panel); border:1px solid var(--line); border-radius:20px; overflow:hidden; }
 .wrapLayer{ position:absolute; left:50%; bottom:2%; width:64%; height:44%; transform:translateX(-50%); pointer-events:none; z-index:1; }
-.canvasEmpty{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:20px; color:var(--ink-soft); font-size:14px; gap:8px; z-index:2; }
+.canvasEmpty{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:20px; color:var(--ink-soft); font-size:14px; gap:8px; }
 .canvasEmpty .bigIcon{ font-size:30px; opacity:0.6; }
-.stageFlower{ position:absolute; width:60px; height:60px; margin-left:-30px; margin-top:-30px; display:flex; align-items:center; justify-content:center; pointer-events:none; filter:drop-shadow(0 6px 8px rgba(32,48,31,0.16)); animation:popIn .3s cubic-bezier(.34,1.56,.64,1); z-index:3; }
+.stageFlower{ position:absolute; width:60px; height:60px; margin-left:-30px; margin-top:-30px; display:flex; align-items:center; justify-content:center; pointer-events:none; filter:drop-shadow(0 6px 8px rgba(32,48,31,0.14)); }
 .stageFlower svg{ width:100%; height:100%; overflow:visible; }
 @keyframes popIn{ from{ transform:scale(0.3); opacity:0; } to{ transform:scale(1); opacity:1; } }
 #bouquetCanvas{ cursor:pointer; }
@@ -118,7 +118,7 @@ footer.siteFooter{ text-align:center; padding:30px 20px 50px; color:var(--ink-so
 
 /* photos tab */
 .photoGridEdit{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:8px; }
-.photoSlot{ aspect-ratio:1; border-radius:14px; border:1.5px dashed var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; background:var(--bg); font-size:11px; color:var(--ink-soft); text-align:center; }
+.photoSlot{ aspect-ratio:1; border-radius:14px; border:1.5px dashed var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative; background:var(--bg); font-size:12px; color:var(--ink-soft); }
 .photoSlot img{ width:100%; height:100%; object-fit:cover; }
 .photoSlot input[type=file]{ position:absolute; inset:0; opacity:0; cursor:pointer; }
 .photoSlot .rm{ position:absolute; top:4px; right:4px; width:20px; height:20px; border-radius:50%; background:rgba(0,0,0,0.55); color:#fff; font-size:11px; z-index:2; }
@@ -173,7 +173,7 @@ footer.siteFooter{ text-align:center; padding:30px 20px 50px; color:var(--ink-so
 @keyframes oRing{ 0%{opacity:0.6;transform:scale(0.4);} 100%{opacity:0;transform:scale(1.6);} }
 .o-envelope .env{ width:160px; height:110px; position:relative; }
 .o-envelope .envBody{ position:absolute; inset:0; background:var(--t-accent2); border-radius:8px; }
-.o-envelope .envFlap{ position:absolute; top:0; left:0; width:100%; height:60%; background:var(--t-accent); clip-path:polygon(0 0,100% 0,50% 100%); transform-origin:top center; transition:transform 1s var(--ease); }
+.o-envelope .envFlap{ position:absolute; top:0; left:0; width:100%; height:60%; background:var(--t-accent); clip-path:polygon(0 0,100% 0,50% 100%); transform-origin:top center; transition:transform 1s ease; }
 .o-envelope.play .envFlap{ transform:rotateX(180deg); }
 .o-envelope .burst{ position:absolute; bottom:100%; left:50%; width:60px; height:60px; margin-left:-30px; opacity:0; }
 .o-envelope.play .burst{ animation:oBurst 1.4s var(--ease) .5s forwards; }
@@ -184,13 +184,6 @@ footer.siteFooter{ text-align:center; padding:30px 20px 50px; color:var(--ink-so
 .o-petals .centerWord{ opacity:0; font-family:'Fraunces',serif; font-style:italic; font-size:20px; }
 .o-petals.play .centerWord{ animation:oFadeIn 1s ease 1.4s forwards; }
 @keyframes oFadeIn{ to{opacity:1;} }
-.o-stars{ background:radial-gradient(ellipse at center,#232a4a,#14172b); }
-.o-stars .st{ position:absolute; width:5px; height:5px; border-radius:50%; background:var(--t-accent); opacity:0; box-shadow:0 0 8px var(--t-accent); }
-.o-stars.play .st{ animation:oTwinkle 1.8s ease forwards; }
-@keyframes oTwinkle{ 0%{opacity:0; transform:scale(0.3);} 50%{opacity:1; transform:scale(1.4);} 100%{opacity:0.9; transform:scale(1);} }
-.o-stars .heartLine{ opacity:0; stroke:var(--t-accent2); stroke-width:1.3; fill:none; stroke-dasharray:300; stroke-dashoffset:300; }
-.o-stars.play .heartLine{ animation:oDraw 1.6s var(--ease) .5s forwards; }
-@keyframes oDraw{ 0%{opacity:0.8; stroke-dashoffset:300;} 100%{opacity:0.9; stroke-dashoffset:0;} }
 .o-glass .hg{ width:70px; height:110px; position:relative; opacity:0; transform:translateY(10px); }
 .o-glass.play .hg{ animation:oFadeUp 1s ease forwards; }
 @keyframes oFadeUp{ to{opacity:1; transform:translateY(0);} }
@@ -218,7 +211,7 @@ footer.siteFooter{ text-align:center; padding:30px 20px 50px; color:var(--ink-so
 /* proposal box */
 .proposalSec{ margin-top:40px; text-align:center; }
 .giftBox{ width:110px; height:90px; margin:0 auto; position:relative; cursor:pointer; }
-.giftBox .lid{ position:absolute; top:-14px; left:-6px; width:122px; height:26px; background:var(--t-accent); border-radius:6px; transition:transform .6s var(--ease), opacity .6s ease; transform-origin:20% 100%; z-index:3; }
+.giftBox .lid{ position:absolute; top:-14px; left:-6px; width:122px; height:26px; background:var(--t-accent); border-radius:6px; transition:transform .6s var(--ease), opacity .6s ease; transform-origin:center bottom; }
 .giftBox .body{ position:absolute; top:12px; left:0; width:110px; height:78px; background:var(--t-accent2); border-radius:0 0 8px 8px; }
 .giftBox .ribbonV{ position:absolute; top:-14px; left:50%; width:14px; height:104px; margin-left:-7px; background:var(--t-accent); z-index:4; }
 .giftBox.opened .lid{ transform:translateY(-40px) rotate(-25deg); opacity:0; }
@@ -246,7 +239,7 @@ footer.siteFooter{ text-align:center; padding:30px 20px 50px; color:var(--ink-so
 .linkPill{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; background:var(--t-panel-bg); border:1px solid var(--t-panel-border); border-radius:20px; padding:8px 14px; margin-top:14px; word-break:break-all; }
 .qrNote{ font-size:12px; opacity:0.7; margin-top:10px; }
 
-#toast{ position:fixed; bottom:22px; left:50%; transform:translateX(-50%) translateY(16px); background:var(--ink); color:var(--panel); padding:11px 20px; border-radius:22px; font-size:13px; opacity:0; transition:all .3s var(--ease); z-index:200; pointer-events:none; }
+#toast{ position:fixed; bottom:22px; left:50%; transform:translateX(-50%) translateY(16px); background:var(--ink); color:var(--panel); padding:11px 20px; border-radius:22px; font-size:13px; opacity:0; transition:opacity .2s ease, transform .2s ease; z-index:200; }
 #toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
 #previewModal{ position:fixed; inset:0; background:rgba(20,26,17,0.55); backdrop-filter:blur(4px); z-index:150; display:none; align-items:flex-end; justify-content:center; }
 #previewModal.open{ display:flex; }
@@ -394,22 +387,22 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 /* ============================================================ PASTEL PALETTE + FLOWERS */
-const PALETTE = { blush:'#F3C9CE', peach:'#F7D9BE', butter:'#F5E6A8', lavender:'#DCCBEF', sky:'#CFE1F0', mint:'#CDE7D8', rose:'#EFB3C2', ivory:'#F8F1E1', crimson:'#E4433D', tangerine:'#F0812E', magenta:'#D6339A', violet:'#8A3FD1', cobalt:'#2E7FE0', gold:'#F2C230' };
+const PALETTE = { blush:'#F3C9CE', peach:'#F7D9BE', butter:'#F5E6A8', lavender:'#DCCBEF', sky:'#CFE1F0', mint:'#CDE7D8', rose:'#EFB3C2', ivory:'#F8F1E1', crimson:'#E4433D', tangerine:'#F0812E', magenta:'#D96C8F', plum:'#8C5A6B', chartreuse:'#C4D96A', coral:'#F08B7E', teal:'#60A8A4', peachy:'#F6C7A7' };
 const TYPES = ['daisy','rosette','peony','ranunculus','tulip','lily','carnation','hydrangea','sprig','bud'];
 function svgWrap(inner,vb){ return `<svg viewBox="${vb||'0 0 100 100'}" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`; }
-function shade(hex,percent){ const n=parseInt(hex.slice(1),16); let r=(n>>16)+Math.round(255*percent/100), g=((n>>8)&0xff)+Math.round(255*percent/100), b=(n&0xff)+Math.round(255*percent/100); r=Math.max(0,Math.min(255,r)); g=Math.max(0,Math.min(255,g)); b=Math.max(0,Math.min(255,b)); return '#'+(1<<24|r<<16|g<<8|b).toString(16).slice(1); }
+function shade(hex,percent){ const n=parseInt(hex.slice(1),16); let r=(n>>16)+Math.round(255*percent/100), g=((n>>8)&0xff)+Math.round(255*percent/100), b=(n&0xff)+Math.round(255*percent/100); r=Math.max(0,Math.min(255,r)); g=Math.max(0,Math.min(255,g)); b=Math.max(0,Math.min(255,b)); return '#'+(1<<24 | r<<16 | g<<8 | b).toString(16).slice(1); }
 const GREEN='#9DB88A';
 function flowerSVG(type,colorKey){
   const c = PALETTE[colorKey] || PALETTE.blush; const dark = shade(c,-14); const light = shade(c,10);
-  if(type==='daisy'){ let p=''; for(let i=0;i<12;i++){ const a=(360/12)*i; p+=`<ellipse cx="50" cy="26" rx="6" ry="18" fill="${i%2?c:light}" opacity="0.95" transform="rotate(${a} 50 50)"/>`; } return svgWrap(p+`<circle cx="50" cy="50" r="10" fill="${PALETTE.butter}"/>`); }
-  if(type==='rosette'){ let p=''; for(let i=0;i<10;i++){ const a=(360/10)*i; p+=`<path d="M50 50 C 40 38, 40 20, 50 12 C 60 20, 60 38, 50 50 Z" fill="${i%2?c:dark}" opacity="0.9" transform="rotate(${a} 50 50)"/>`; } return svgWrap(p+`<circle cx="50" cy="50" r="6" fill="${dark}"/>`); }
-  if(type==='peony'){ let b=''; const offs=[[0,0,15],[13,-9,11],[-13,-9,11],[13,11,11],[-13,11,11],[0,-19,10],[0,19,10],[19,2,9],[-19,2,9],[9,-16,8],[-9,16,8]]; offs.forEach((o,i)=>{ b+=`<circle cx="${50+o[0]}" cy="${50+o[1]}" r="${o[2]}" fill="${i%3===0?dark:(i%3===1?c:light)}" opacity="0.9"/>`; }); return svgWrap(b); }
-  if(type==='ranunculus'){ let p=''; [22,15,9].forEach((r,ring)=>{ const count=6+ring*2; for(let i=0;i<count;i++){ const a=(360/count)*i+ring*14; p+=`<circle cx="${50+Math.cos(a*Math.PI/180)*r}" cy="${50+Math.sin(a*Math.PI/180)*r}" r="${9-ring}" fill="${ring%2?c:light}" opacity="0.88"/>`; } }); return svgWrap(p+`<circle cx="50" cy="50" r="4" fill="${dark}"/>`); }
-  if(type==='lily'){ let p=''; for(let i=0;i<6;i++){ const a=(360/6)*i; p+=`<path d="M50 50 C 45 34, 43 16, 50 6 C 57 16, 55 34, 50 50 Z" fill="${i%2?c:light}" opacity="0.95" transform="rotate(${a} 50 50)"/>`; } let st=''; for(let i=0;i<6;i++){ const a=((360/6)*i+30-90)*Math.PI/180; const x2=50+Math.cos(a)*15, y2=50+Math.sin(a)*15; st+=`<line x1="50" y1="50" x2="${x2}" y2="${y2}" stroke="${dark}" stroke-width="1"/><circle cx="${x2}" cy="${y2}" r="2" fill="${PALETTE.butter}"/>`; } return svgWrap(p+st+`<circle cx="50" cy="50" r="3" fill="${dark}"/>`); }
-  if(type==='tulip'){ return svgWrap(`<path d="M50 15 C 30 15, 26 40, 34 55 C 40 48, 44 46, 50 55 C 56 46, 60 48, 66 55 C 74 40, 70 15, 50 15 Z" fill="${c}"/><path d="M50 20 C 44 24, 42 40, 50 52 C 58 40, 56 24, 50 20 Z" fill="${dark}" opacity="0.4"/><line x1="50" y1="55" x2="50" y2="90" stroke="${GREEN}" stroke-width="3"/>`); }
-  if(type==='carnation'){ let p=''; for(let ring=0;ring<3;ring++){ const r=20-ring*5; const count=10; for(let i=0;i<count;i++){ const a=(360/count)*i+ring*12; const x=50+Math.cos(a*Math.PI/180)*r, y=50+Math.sin(a*Math.PI/180)*r; p+=`<path d="M${x} ${y} l4 -3 l-1 5 l4 1 l-4 2 l1 5 l-4 -3 l-4 3 l1 -5 l-4 -2 l4 -1 l-1 -5 Z" fill="${ring%2?c:light}" opacity="0.85"/>`; } } return svgWrap(p); }
-  if(type==='hydrangea'){ let p=''; for(let i=0;i<13;i++){ const a=(360/13)*i*1.7; const rad=Math.random()*20+6; const x=50+Math.cos(a*Math.PI/180)*rad, y=50+Math.sin(a*Math.PI/180)*rad; const col=i%2?c:light; p+=`<g transform="translate(${x} ${y})">`; for(let k=0;k<4;k++){ p+=`<ellipse cx="0" cy="-4" rx="3" ry="4" fill="${col}" transform="rotate(${k*90})"/>`; } p+=`<circle r="1.4" fill="${dark}"/></g>`; } return svgWrap(p); }
-  if(type==='sprig'){ let l=''; for(let i=0;i<5;i++){ const y=25+i*13, side=i%2===0?1:-1; l+=`<ellipse cx="${50+side*13}" cy="${y}" rx="11" ry="5" fill="${GREEN}" transform="rotate(${side*30} ${50+side*13} ${y})"/>`; } return svgWrap(`<line x1="50" y1="15" x2="50" y2="90" stroke="${GREEN}" stroke-width="2.5"/>${l}`); }
+  if(type==='daisy'){ let p=''; for(let i=0;i<12;i++){ const a=(360/12)*i; p+=`<ellipse cx="50" cy="26" rx="6" ry="18" fill="${i%2?c:light}" opacity="0.95" transform="rotate(${a} 50 50)"/>`; } return svgWrap(`<circle cx="50" cy="50" r="6" fill="${dark}"/>${p}`); }
+  if(type==='rosette'){ let p=''; for(let i=0;i<10;i++){ const a=(360/10)*i; p+=`<path d="M50 50 C 40 38, 40 20, 50 12 C 60 20, 60 38, 50 50 Z" fill="${i%2?c:dark}" opacity="0.9" transform="rotate(${a} 50 50)"/>`; } return svgWrap(`<circle cx="50" cy="50" r="7" fill="${dark}"/>${p}`); }
+  if(type==='peony'){ let b=''; const offs=[[0,0,15],[13,-9,11],[-13,-9,11],[13,11,11],[-13,11,11],[0,-19,10],[0,19,10],[19,2,9],[-19,2,9],[9,-16,8],[-9,16,8]]; offs.forEach((o)=>{ b+=`<circle cx="${50+o[0]}" cy="${50+o[1]}" r="${o[2]}" fill="${c}" opacity="0.9"/>`; }); return svgWrap(`<circle cx="50" cy="50" r="11" fill="${dark}"/>${b}`); }
+  if(type==='ranunculus'){ let p=''; [22,15,9].forEach((r,ring)=>{ const count=6+ring*2; for(let i=0;i<count;i++){ const a=(360/count)*i+ring*14; const x=50+Math.cos(a*Math.PI/180)*r; const y=50+Math.sin(a*Math.PI/180)*r; p+=`<circle cx="${x}" cy="${y}" r="${8-ring}" fill="${ring%2?light:c}" opacity="0.92"/>`; } }); return svgWrap(`<circle cx="50" cy="50" r="8" fill="${dark}"/>${p}`); }
+  if(type==='lily'){ let p=''; for(let i=0;i<6;i++){ const a=(360/6)*i; p+=`<path d="M50 50 C 45 34, 43 16, 50 6 C 57 16, 55 34, 50 50 Z" fill="${i%2?c:light}" opacity="0.95" transform="rotate(${a} 50 50)"/>`; } return svgWrap(`<circle cx="50" cy="50" r="5" fill="${dark}"/>${p}`); }
+  if(type==='tulip'){ return svgWrap(`<path d="M50 15 C 30 15, 26 40, 34 55 C 40 48, 44 46, 50 55 C 56 46, 60 48, 66 55 C 74 40, 70 15, 50 15 Z" fill="${c}"/><path d="M50 18 C 44 22, 42 38, 50 52 C 58 38, 56 22, 50 18 Z" fill="${shade(c,-10)}"/><path d="M50 54 L50 88" stroke="${GREEN}" stroke-width="3"/>`); }
+  if(type==='carnation'){ let p=''; for(let ring=0;ring<3;ring++){ const r=20-ring*5; const count=10; for(let i=0;i<count;i++){ const a=(360/count)*i+ring*12; const x=50+Math.cos(a*Math.PI/180)*r, y=50+Math.sin(a*Math.PI/180)*r; p+=`<circle cx="${x}" cy="${y}" r="${6-ring}" fill="${ring%2?light:c}" opacity="0.9"/>`; } } return svgWrap(`<circle cx="50" cy="50" r="6" fill="${dark}"/>${p}`); }
+  if(type==='hydrangea'){ let p=''; for(let i=0;i<13;i++){ const a=(360/13)*i*1.7; const rad=18+(i%4)*6; const x=50+Math.cos(a*Math.PI/180)*rad, y=50+Math.sin(a*Math.PI/180)*rad; p+=`<circle cx="${x}" cy="${y}" r="7" fill="${i%2?c:light}" opacity="0.9"/>`; } return svgWrap(`<circle cx="50" cy="50" r="9" fill="${dark}"/>${p}`); }
+  if(type==='sprig'){ let l=''; for(let i=0;i<5;i++){ const y=25+i*13, side=i%2===0?1:-1; l+=`<ellipse cx="${50+side*13}" cy="${y}" rx="11" ry="5" fill="${GREEN}" transform="rotate(${side*30} ${50+side*13} ${y})"/>`; } return svgWrap(`<path d="M50 52 L50 90" stroke="${GREEN}" stroke-width="3"/>${l}`); }
   if(type==='bud'){ return svgWrap(`<path d="M50 20 C 38 26, 38 46, 50 54 C 62 46, 62 26, 50 20 Z" fill="${c}"/><line x1="50" y1="54" x2="50" y2="88" stroke="${GREEN}" stroke-width="3"/>`); }
   return svgWrap('');
 }
@@ -437,14 +430,13 @@ function wrapRibbonSVG(styleKey){
   </svg>`;
 }
 function ringSVG(){
-  return svgWrap(`<ellipse cx="50" cy="62" rx="24" ry="20" fill="none" stroke="#D9B872" stroke-width="7"/><path d="M50 22 L60 40 L50 36 L40 40 Z" fill="#EFB3C2"/><path d="M50 22 L60 40 L50 36 L40 40 Z" fill="#F6D6DF" opacity="0.6" transform="translate(-1,-1) scale(0.8) translate(12,8)"/>`);
+  return svgWrap(`<ellipse cx="50" cy="62" rx="24" ry="20" fill="none" stroke="#D9B872" stroke-width="7"/><path d="M50 22 L60 40 L50 36 L40 40 Z" fill="#EFB3C2"/><path d="M50 22 L60 40 L50 36 L40 40 Z" fill="none" stroke="#D9B872" stroke-width="2"/>`);
 }
 
 /* ============================================================ THEMES */
 const THEMES = {
   blush:{ name:'Blush Garden', desc:'soft bloom reveal', bg:'#F7EDE9', bg2:'#F0DCE0', ink:'#3B2A2E', accent:'#C97B86', accent2:'#E3A6AE', opener:'bloom' },
   ivory:{ name:'Ivory Letter', desc:'envelope opens', bg:'#F5F0E1', bg2:'#EAE0C4', ink:'#3A3223', accent:'#B08D46', accent2:'#D9C48C', opener:'envelope' },
-  midnight:{ name:'Midnight Stars', desc:'stars trace a heart', bg:'#E4E1F0', bg2:'#CFC9E8', ink:'#221F33', accent:'#8C7FD1', accent2:'#D9B872', opener:'stars' },
   dusk:{ name:'Petal Rain', desc:'petals fall in', bg:'#EFE7E9', bg2:'#E3D3D8', ink:'#33262A', accent:'#8C5A6B', accent2:'#7C9473', opener:'petals' },
   glass:{ name:'Hourglass Bloom', desc:'time turns to bloom', bg:'#F3E7D8', bg2:'#E8D3B0', ink:'#3B2E1F', accent:'#B5713C', accent2:'#D9A566', opener:'hourglass' },
   wave:{ name:'Ocean Note', desc:'gentle waves reveal', bg:'#E6F1EF', bg2:'#CFE6E2', ink:'#1F3B36', accent:'#3E8E82', accent2:'#E8A96B', opener:'waves' }
@@ -463,7 +455,7 @@ function persistDraft(){
   try{
     if(!draft.flowers.length && !draft.recipient && !draft.message && !draft.photos.length && !draft.background){ localStorage.removeItem(DRAFT_KEY); return; }
     localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
-  }catch(e){ /* storage full or unavailable — editing still works, just without autosave */ }
+  }catch(e){ }
 }
 function loadPersistedDraft(){
   try{ const raw=localStorage.getItem(DRAFT_KEY); return raw ? JSON.parse(raw) : null; }catch(e){ return null; }
@@ -500,9 +492,9 @@ function maybeShowDraftBanner(){
   const banner=document.createElement('div');
   banner.className='panelCard'; banner.id='draftBanner';
   banner.style.cssText='background:rgba(140,90,107,0.1);border-color:var(--plum);';
-  banner.innerHTML=`<h3 style="margin-bottom:8px;">Continue your last bouquet?</h3><div class="sub" style="margin-bottom:14px;">Looks like you had one in progress.</div><div class="composerActions" style="display:flex;gap:10px;"><button class="btn btn-ghost" id="discardDraftBtn" style="flex:1;">Start fresh</button><button class="btn btn-primary" id="resumeDraftBtn" style="flex:1;">Resume</button></div>`;
+  banner.innerHTML=`<h3 style="margin-bottom:8px;">Continue your last bouquet?</h3><div class="sub" style="margin-bottom:14px;">Looks like you had one in progress.</div><div class="composerActions" style="display:flex;gap:10px;flex-wrap:wrap;"><button class="btn btn-primary btn-sm" id="resumeDraftBtn">Resume</button><button class="btn btn-ghost btn-sm" id="discardDraftBtn">Discard</button></div>`;
   wrap.insertBefore(banner, wrap.firstChild);
-  document.getElementById('resumeDraftBtn').onclick=()=>{ draft=Object.assign({passcode:'',lockHint:'',theme:'blush',flowers:[],photos:[],ring:{enabled:false,question:''},background:null,recipient:'',sender:'',message:''}, saved); populateEditorFromDraft(); banner.remove(); draftBannerHandled=true; showToast('Bouquet restored'); };
+  document.getElementById('resumeDraftBtn').onclick=()=>{ draft=Object.assign({passcode:'',lockHint:'',theme:'blush',flowers:[],photos:[],ring:{enabled:false,question:''},background:null,recipient:'',sender:'',message:''}, saved); populateEditorFromDraft(); banner.remove(); draftBannerHandled=true; };
   document.getElementById('discardDraftBtn').onclick=()=>{ localStorage.removeItem(DRAFT_KEY); banner.remove(); draftBannerHandled=true; };
 }
 
@@ -586,13 +578,13 @@ function refreshLibSelection(){
   document.querySelectorAll('.colorDot').forEach(d=> d.classList.toggle('sel', d.dataset.color===selColor));
 }
 document.getElementById('addFlowerBtn').addEventListener('click', ()=>{
-  const f={ id:'f'+Date.now()+Math.floor(Math.random()*999), type:selType, color:selColor, x:50+(Math.random()*20-10), y:52+(Math.random()*16-8), rot:Math.round(Math.random()*30-15), scale:defaultFlowerScale, z:nextZ++ };
+  const f={ id:'f'+Date.now()+Math.floor(Math.random()*999), type:selType, color:selColor, x:50+(Math.random()*20-10), y:52+(Math.random()*16-8), rot:Math.round(Math.random()*30-15), scale:defaultFlowerScale, z:++nextZ };
   draft.flowers.push(f); renderCanvas(); persistDraft();
 });
 function placeFlowerAt(clientX, clientY){
   const rect=canvas.getBoundingClientRect();
   const px=((clientX-rect.left)/rect.width)*100, py=((clientY-rect.top)/rect.height)*100;
-  const f={ id:'f'+Date.now()+Math.floor(Math.random()*999), type:selType, color:selColor, x:Math.max(4,Math.min(96,px)), y:Math.max(4,Math.min(96,py)), rot:Math.round(Math.random()*20-10), scale:defaultFlowerScale, z:nextZ++ };
+  const f={ id:'f'+Date.now()+Math.floor(Math.random()*999), type:selType, color:selColor, x:Math.max(4,Math.min(96,px)), y:Math.max(4,Math.min(96,py)), rot:Math.round(Math.random()*20-10), scale:defaultFlowerScale, z:++nextZ };
   draft.flowers.push(f); renderCanvas(); persistDraft();
 }
 canvas.addEventListener('click', (e)=>{ placeFlowerAt(e.clientX, e.clientY); });
@@ -628,7 +620,7 @@ async function loadImageCompressed(file, maxW, quality){
       c.getContext('2d').drawImage(bitmap,0,0);
       bitmap.close();
       return c.toDataURL('image/jpeg', quality);
-    }catch(e){ /* fall through to the fallback path below */ }
+    }catch(e){}
   }
   const url=URL.createObjectURL(file);
   try{
@@ -647,12 +639,7 @@ function renderPhotoGrid(){
   for(let i=0;i<4;i++){
     const p=draft.photos[i]; const slot=document.createElement('div'); slot.className='photoSlot';
     if(p){ slot.innerHTML=`<img src="${p.src}"><button class="rm" data-i="${i}">✕</button>`; slot.querySelector('.rm').onclick=(e)=>{ e.stopPropagation(); draft.photos.splice(i,1); renderPhotoGrid(); updateSizeNote(); persistDraft(); }; }
-    else{ slot.innerHTML=`<span>+ Add photo</span><input type="file" accept="image/*">`; slot.querySelector('input').onchange=async (e)=>{
-        const file=e.target.files[0]; if(!file) return;
-        try{ const src = await loadImageCompressed(file, 300, 0.55); draft.photos[i]={ src, caption:'' }; renderPhotoGrid(); updateSizeNote(); persistDraft(); }
-        catch(err){ showToast("Couldn't load that photo — try a smaller one"); }
-      };
-    }
+    else{ slot.innerHTML=`<span>+ Add photo</span><input type="file" accept="image/*">`; slot.querySelector('input').onchange=async (e)=>{ const file=e.target.files[0]; if(!file) return; try{ const src = await loadImageCompressed(file, 300, 0.55); draft.photos[i]={ src, caption:'' }; renderPhotoGrid(); updateSizeNote(); persistDraft(); } catch(err){ showToast("Couldn't load that photo — try a smaller one"); } }; }
     grid.appendChild(slot);
   }
   const existing=document.getElementById('photoCaptions'); if(existing) existing.remove();
@@ -670,7 +657,7 @@ document.getElementById('ringQuestion').addEventListener('input', (e)=>{ draft.r
 updateRingToggle();
 
 /* ---------- background tab ---------- */
-function shadeRGB(r,g,b,percent){ r=Math.max(0,Math.min(255,r+Math.round(255*percent/100))); g=Math.max(0,Math.min(255,g+Math.round(255*percent/100))); b=Math.max(0,Math.min(255,b+Math.round(255*percent/100))); return '#'+[r,g,b].map(x=>x.toString(16).padStart(2,'0')).join(''); }
+function shadeRGB(r,g,b,percent){ r=Math.max(0,Math.min(255,r+Math.round(255*percent/100))); g=Math.max(0,Math.min(255,g+Math.round(255*percent/100))); b=Math.max(0,Math.min(255,b+Math.round(255*percent/100))); return [r,g,b]; }
 function analyzeImageColors(dataURL, callback){
   const img=new Image();
   img.onload=()=>{
@@ -683,7 +670,7 @@ function analyzeImageColors(dataURL, callback){
     const ink = lum>0.55 ? '#2A2118' : '#FBF6EE';
     const panelBg = lum>0.55 ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.14)';
     const panelBorder = lum>0.55 ? 'rgba(0,0,0,0.08)' : 'rgba(255,255,255,0.18)';
-    callback({ ink, accent:shadeRGB(r,g,b,-24), accent2:shadeRGB(r,g,b,20), panelBg, panelBorder });
+    callback({ ink, accent: '#' + shadeRGB(r,g,b,-24).map(x=>x.toString(16).padStart(2,'0')).join(''), accent2: '#' + shadeRGB(r,g,b,20).map(x=>x.toString(16).padStart(2,'0')).join(''), panelBg, panelBorder });
   };
   img.src=dataURL;
 }
@@ -702,7 +689,7 @@ function renderBgPreview(){
   const box=document.getElementById('bgPreview'); const sw=document.getElementById('bgSwatchPreview'); const rm=document.getElementById('removeBgBtn');
   if(draft.background){
     box.innerHTML=`<img src="${draft.background.src}"><input type="file" accept="image/*" id="bgFileInput">`;
-    sw.style.display='flex'; sw.innerHTML=`Detected: <span class="sw" style="background:${draft.background.accent}"></span><span class="sw" style="background:${draft.background.accent2}"></span><span class="sw" style="background:${draft.background.ink}"></span>`;
+    sw.style.display='flex'; sw.innerHTML=`Detected: <span class="sw" style="background:${draft.background.accent}"></span><span class="sw" style="background:${draft.background.accent2}"></span>`;
     rm.style.display='';
   } else {
     box.innerHTML=`<span class="ph">Tap to upload a photo</span><input type="file" accept="image/*" id="bgFileInput">`;
@@ -710,7 +697,6 @@ function renderBgPreview(){
   }
   document.getElementById('bgFileInput').addEventListener('change', (e)=> handleBgFile(e.target.files[0]));
 }
-
 
 /* ---------- message tab ---------- */
 const recipientInput=document.getElementById('recipientInput'), senderInput=document.getElementById('senderInput'), messageInput=document.getElementById('messageInput'), msgCount=document.getElementById('msgCount');
@@ -727,15 +713,14 @@ function updateSizeNote(){
 /* ---------- gift content markup ---------- */
 function escapeHTML(s){ const d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
 function openerMarkup(type, theme){
-  if(type==='bloom'){ return `<div class="oShape" style="position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;"><div class="ring2"></div><div class="centerBloom">${flowerSVG('ranunculus','rose')}</div></div>`; }
+  if(type==='bloom'){ return `<div class="oShape" style="position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;"><div class="ring2"></div><div class="centerBloom">${flowerSVG('rosette','blush')}</div></div>`; }
   if(type==='envelope'){ return `<div class="env"><div class="envBody"></div><div class="envFlap"></div><div class="burst">${flowerSVG('peony','blush')}</div></div>`; }
-  if(type==='petals'){ let p=''; for(let i=0;i<18;i++){ p+=`<div class="fallP" style="left:${Math.random()*94}%;animation-delay:${Math.random()*0.9}s;background:${i%2?theme.accent:theme.accent2};"></div>`; } return p+`<div class="centerWord">grown for you</div>`; }
-  if(type==='stars'){ let s=''; const pts=[[160,60],[110,90],[90,150],[130,200],[190,200],[230,150],[210,90]]; pts.forEach((pt,i)=>{ s+=`<div class="st" style="left:${pt[0]}px;top:${pt[1]}px;animation-delay:${i*0.12}s;"></div>`; }); let path='M'+pts.map(p=>p[0]+' '+p[1]).join(' L ')+' Z'; return `<svg width="320" height="260" style="position:absolute;"><path class="heartLine" d="${path}"/></svg>${s}`; }
+  if(type==='petals'){ let p=''; for(let i=0;i<18;i++){ p+=`<div class="fallP" style="left:${Math.random()*94}%;animation-delay:${Math.random()*0.9}s;background:${i%2?theme.accent:theme.accent2};"></div>`; } return `${p}<div class="centerWord">for you</div>`; }
   if(type==='hourglass'){ let g=''; for(let i=0;i<10;i++){ g+=`<div class="grain" style="animation-delay:${i*0.12}s;"></div>`; } return `<div class="hg">${flowerSVG('tulip','butter')}${g}</div>`; }
-  if(type==='waves'){ return `<div class="wv" style="animation-delay:0s;"></div><div class="wv" style="animation-delay:.25s;"></div><div class="wv" style="animation-delay:.5s;"></div><div class="centerBloom2">${flowerSVG('daisy','mint')}</div>`; }
+  if(type==='waves'){ return `<div class="wv" style="animation-delay:0s;"></div><div class="wv" style="animation-delay:.25s;"></div><div class="wv" style="animation-delay:.5s;"></div><div class="centerBloom2">${flowerSVG('bud','mint')}</div>`; }
   return '';
 }
-function playOpener(theme, container, onDone){ const t=THEMES[theme]; container.className='openerStage o-'+t.opener; container.innerHTML=openerMarkup(t.opener,t); requestAnimationFrame(()=> container.classList.add('play')); setTimeout(onDone, 2200); }
+function playOpener(theme, container, onDone){ const t=THEMES[theme]; container.className='openerStage o-'+t.opener; container.innerHTML=openerMarkup(t.opener,t); requestAnimationFrame(()=> container.classList.add('play')); }
 function applyThemeVars(gift){
   const t=THEMES[gift.theme]||THEMES.blush; const wrap=document.getElementById('themedWrap');
   wrap.style.backgroundImage=''; wrap.style.backgroundSize=''; wrap.style.backgroundPosition='';
@@ -811,7 +796,7 @@ document.getElementById('previewBtn').addEventListener('click', ()=>{
   if(!draft.flowers.length){ showFormError('Add at least one flower to preview the bouquet.'); return; }
   const t=THEMES[draft.theme]; const pc=document.getElementById('previewContent');
   const bg=draft.background;
-  pc.style.background = bg ? `linear-gradient(${bg.ink==='#2A2118'?'rgba(255,255,255,0.28)':'rgba(10,10,10,0.32)'},${bg.ink==='#2A2118'?'rgba(255,255,255,0.28)':'rgba(10,10,10,0.32)'}), url(${bg.src})` : `linear-gradient(160deg,${t.bg},${t.bg2})`;
+  pc.style.background = bg ? `linear-gradient(${bg.ink==='#2A2118'?'rgba(255,255,255,0.28)':'rgba(10,10,10,0.32)'},${bg.ink==='#2A2118'?'rgba(255,255,255,0.28)':'rgba(10,10,10,0.32)'}), url(${bg.src})` : 'var(--bg)';
   pc.style.backgroundSize='cover'; pc.style.backgroundPosition='center';
   pc.style.color = bg ? bg.ink : t.ink; pc.style.padding='0 20px 26px';
   pc.style.setProperty('--t-accent', bg?bg.accent:t.accent); pc.style.setProperty('--t-accent2', bg?bg.accent2:t.accent2);
@@ -829,7 +814,7 @@ document.getElementById('saveBtn').addEventListener('click', async ()=>{
   if(!draft.flowers.length){ showFormError('Your bouquet is empty — add at least one flower first.'); return; }
   if(!draft.recipient.trim()){ showFormError("Add a recipient name so they know it's for them."); return; }
   if(draft.passcode && draft.passcode.length!==4){ showFormError('Passcode must be exactly 4 digits, or left blank.'); return; }
-  const gift={ createdAt:Date.now(), passcode:draft.passcode, lockHint:draft.lockHint, theme:draft.theme, wrapStyle:draft.wrapStyle, flowers:draft.flowers, photos:draft.photos, ring:draft.ring, background:draft.background, recipient:draft.recipient.trim(), sender:draft.sender.trim(), message:draft.message.trim() };
+  const gift={ createdAt:Date.now(), passcode:draft.passcode, lockHint:draft.lockHint, theme:draft.theme, wrapStyle:draft.wrapStyle, flowers:draft.flowers, photos:draft.photos, ring:draft.ring, background:draft.background, recipient:draft.recipient, sender:draft.sender, message:draft.message };
   if(JSON.stringify(gift).length > 900000){ showFormError('This bouquet is too large to save (over ~900KB) — remove a photo or the background and try again.'); return; }
   const btn=document.getElementById('saveBtn'); const original=btn.textContent;
   btn.textContent='Saving…'; btn.disabled=true;
@@ -863,13 +848,13 @@ async function loadGift(id){
     document.getElementById('retryLoad').onclick=()=>loadGift(id);
     return;
   }
-  if(!gift || !Array.isArray(gift.flowers)){ wrap.innerHTML=`<div class="stateBox"><h2>This gift link isn't valid</h2><p>It may have been mistyped, or the bouquet hasn't been sent yet.</p><a href="#/create" class="btn btn-primary">Start your own bouquet</a></div>`; return; }
+  if(!gift || !Array.isArray(gift.flowers)){ wrap.innerHTML=`<div class="stateBox"><h2>This gift link isn't valid</h2><p>It may have been mistyped, or the bouquet hasn't been sent yet.</p><a href="#/" class="btn btn-primary">Back home</a></div>`; return; }
   applyThemeVars(gift);
   if(gift.passcode){ showGiftLock(gift, wrap); } else { revealGift(gift, wrap); }
 }
 function showGiftLock(gift, wrap){
   giftEntered='';
-  wrap.innerHTML = `<div class="giftLock"><div class="lockIcon">🔒</div><h2>${gift.recipient?'For '+escapeHTML(gift.recipient):'A locked gift'}</h2><p>${gift.lockHint?escapeHTML(gift.lockHint):'Enter the code to open it.'}</p><div class="pcRow" id="pcRow"><div class="d"></div><div class="d"></div><div class="d"></div><div class="d"></div></div><div class="keypad2" id="keypad2"></div><div class="lockErr" id="lockErr">&nbsp;</div></div>`;
+  wrap.innerHTML = `<div class="giftLock"><div class="lockIcon">🔒</div><h2>${gift.recipient?'For '+escapeHTML(gift.recipient):'A locked gift'}</h2><p>${gift.lockHint?escapeHTML(gift.lockHint):'Enter the 4-digit code to open it.'}</p><div class="pcRow">${Array.from({length:4},()=>'<span class="d"></span>').join('')}</div><div class="keypad2" id="keypad2"></div><div class="lockErr" id="lockErr"></div></div>`;
   const keys=['1','2','3','4','5','6','7','8','9','','0','⌫']; const kp=document.getElementById('keypad2');
   keys.forEach(k=>{ const b=document.createElement('button'); b.className='key2'+(k===''?' ghost':''); b.textContent=k; if(k!=='') b.addEventListener('click',()=>handleGiftKey(k,gift,wrap)); kp.appendChild(b); });
 }
@@ -877,7 +862,7 @@ function handleGiftKey(k,gift,wrap){
   if(k==='⌫'){ giftEntered=giftEntered.slice(0,-1); updateGiftDots(); return; }
   if(giftEntered.length>=4) return;
   giftEntered+=k; updateGiftDots();
-  if(giftEntered.length===4){ setTimeout(()=>{ if(giftEntered===gift.passcode){ revealGift(gift,wrap); } else { document.querySelectorAll('.pcRow .d').forEach(d=>d.classList.add('err')); document.getElementById('lockErr').textContent='Not quite — try again'; setTimeout(()=>{ giftEntered=''; updateGiftDots(); document.getElementById('lockErr').innerHTML='&nbsp;'; },700); } },150); }
+  if(giftEntered.length===4){ setTimeout(()=>{ if(giftEntered===gift.passcode){ revealGift(gift,wrap); } else { document.querySelectorAll('.pcRow .d').forEach(d=>d.classList.add('err')); document.getElementById('lockErr').textContent='That code didn\'t match — try again.'; giftEntered=''; updateGiftDots(); } }, 200); }
 }
 function updateGiftDots(){ document.querySelectorAll('.pcRow .d').forEach((d,i)=>{ d.classList.toggle('filled', i<giftEntered.length); d.classList.remove('err'); }); }
 
@@ -891,13 +876,12 @@ function revealGift(gift, wrap){
 
   const shareCard=document.createElement('div'); shareCard.className='shareCard';
   const giftUrl=location.origin+location.pathname+'#/gift/'+(location.hash.replace('#/gift/',''));
-  shareCard.innerHTML=`<h3>Send this to someone else</h3><div id="qrBox"></div><div class="shareBtnRow"><button class="btn btn-ghost" id="copyBtn">Copy link</button><button class="btn btn-primary" id="nativeShareBtn" style="display:none;">Share</button></div><button class="smallLink" id="toggleLinkBtn" style="margin-top:12px;background:none;border:none;text-decoration:underline;font-size:11.5px;opacity:0.7;">Show link as text</button><div class="linkPill mono" id="linkPill" style="display:none;"></div>`;
+  shareCard.innerHTML=`<h3>Send this to someone else</h3><div id="qrBox"></div><div class="shareBtnRow"><button class="btn btn-ghost" id="copyBtn">Copy link</button><button class="btn btn-primary" id="nativeShareBtn" style="display:none;">Share</button></div><div class="linkPill" id="linkPill" style="display:none;"></div><div class="qrNote">Nice to share, easy to scan.</div>`;
   document.getElementById('giftWrap').appendChild(shareCard);
   document.getElementById('linkPill').textContent=giftUrl;
-  try{ new QRCode(document.getElementById('qrBox'), { text:giftUrl, width:170, height:170, colorDark:'#20301F', colorLight:'#ffffff' }); }catch(e){ document.getElementById('qrBox').textContent='QR unavailable — use the link below.'; }
-  document.getElementById('toggleLinkBtn').onclick=()=>{ const p=document.getElementById('linkPill'); const showing=p.style.display!=='none'; p.style.display=showing?'none':'block'; document.getElementById('toggleLinkBtn').textContent = showing?'Show link as text':'Hide link text'; };
+  try{ new QRCode(document.getElementById('qrBox'), { text:giftUrl, width:170, height:170, colorDark:'#20301F', colorLight:'#ffffff' }); }catch(e){ document.getElementById('qrBox').textContent='QR unavailable'; }
   document.getElementById('copyBtn').onclick=async ()=>{ try{ await navigator.clipboard.writeText(giftUrl); showToast('Link copied'); }catch(e){ showToast('Could not copy — select manually'); } };
-  if(navigator.share){ const sb=document.getElementById('nativeShareBtn'); sb.style.display=''; sb.onclick=async ()=>{ try{ await navigator.share({ title:'A bouquet for you', text:'Someone grew you a bouquet on Everbloom.', url:giftUrl }); }catch(e){} }; }
+  if(navigator.share){ const sb=document.getElementById('nativeShareBtn'); sb.style.display=''; sb.onclick=async ()=>{ try{ await navigator.share({ title:'A bouquet for you', text:'Someone grew you a bouquet', url:giftUrl }); }catch(e){} }; }
 }
 function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'), 2400); }
 
